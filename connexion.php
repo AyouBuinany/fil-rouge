@@ -40,7 +40,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>S'identifier | MySweater</title>
+	<title>S'identifier | LuxForAll</title>
   <?php require 'inc/head-tags.php'; ?>
 </head>
 <body class="goto-here">

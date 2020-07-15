@@ -13,7 +13,7 @@
     $action=(isset($_GET['action'])? $_GET['action'] : null);
         if($action=="supprimer" && $idp!=0){
             SupprimerProduit($idp, $db);
-            header("location:admin.php");
+            header("location:gestion.php");
         }
 
 ?>

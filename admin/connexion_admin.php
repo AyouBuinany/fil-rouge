@@ -28,7 +28,7 @@
 			$_SESSION['admin_email'] = $admin['email'];
 			$_SESSION['admin_telephone'] = $admin['telephone'];
             
-            header('Location: admin.php');
+            header('Location: gestion.php');
         } else{
             $erreur .= "Mot de passe est incorrect<br>";
         }
@@ -41,6 +41,8 @@
 <head>
 	<title>S'identifier Admin | LuxForAll </title>
 	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/bootstrap-datepicker.css">
 </head>
 <body class="goto-here">
 	<section class="ftco-section contact-section bg-light">

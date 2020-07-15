@@ -14,7 +14,7 @@
         $description= htmlspecialchars($_POST["libelle"]);
         //appel function AjouterProduit
         AjouterProduit($libelle,$prix,$quantite,$image,$description, $db);
-            header("location:admin.php");
+            header("location:gestion.php");
         }
 ?>
 <!DOCTYPE html>

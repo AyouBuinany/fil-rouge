@@ -26,7 +26,7 @@ if(sizeof($produit)>0){
         $quantite= htmlspecialchars($_POST["quantite"]);
         $description= htmlspecialchars($_POST["description"]);
             ModifierProduit($idp,$libelle,$prix,$quantite,$description, $db);
-            header("location:admin.php");
+            header("location:gestion.php");
         }
 ?>
 <!DOCTYPE html>
@@ -54,10 +54,10 @@ if(sizeof($produit)>0){
                         <label>quantite</label><input class="form-control" name="quantite" placeholder="quantite" type="text"  value="<?= $quantite;?>">
 						</div>
 						<div class="form-group">
-							<img   src="../images/<?= $image;?>"   class="form-control"  alt="<?= $image;?>">
+                        <label>image </label> 	<input type="text" class="form-control" name="image" value="<?= $image;?>" readonly>
                         </div>
                         <div class="form-group">
-                        <label>description </label> <input class="form-control"  name="description" value="<?= $description;?>">
+                        <label>description </label> <textarea class="form-control"  name="description" ><?= $description;?></textarea>
 						</div>
 						<div class="form-group text-center">
 							<input class="btn btn-primary py-3 px-5" name="modifier" type="submit" value="Modifier">

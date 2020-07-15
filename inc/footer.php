@@ -39,9 +39,6 @@
             <li>
               <a class="py-2 d-block" href="panier">Panier</a>
             </li>
-            <li>
-              <a class="py-2 d-block" href="contact">Contacter nous</a>
-            </li>
           </ul>
         </div>
       </div>

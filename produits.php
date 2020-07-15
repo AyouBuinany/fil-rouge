@@ -19,7 +19,6 @@
 			<div class="row no-gutters slider-text align-items-center justify-content-center">
 				<div class="col-md-9 ftco-animate text-center">
 					<p class="breadcrumbs"><span class="mr-2">Produits</span></p>
-					<h1 class="mb-0 bread">COLLECTION CHEMISES</h1>
 				</div>
 			</div>
 		</div>
@@ -38,7 +37,7 @@
 						?>
 						<div class="col-sm-6 col-md-6 col-lg-4 ftco-animate">
 							<div class="product">
-								<a class="img-prod" href="produit-detail?idp=<?php echo $produit['id'] ?>"><img alt="Colorlib Template" class="img-fluid" src="images/<?php echo $produit['image'] ?>.jpg">
+								<a class="img-prod" href="produit-detail?idp=<?php echo $produit['id'] ?>"><img alt="Colorlib Template" class="img-fluid" src="images/<?php echo $produit['image'] ?>">
 								<div class="overlay"></div></a>
 								<div class="text py-3 px-3">
 									<h3><a href="produit-detail"><?php echo $produit['libelle'] ?></a></h3>
