@@ -5,4 +5,3 @@
 <link rel="stylesheet" href="css/bootstrap-datepicker.css">
 <link rel="stylesheet" href="css/icomoon.css"> 
 <link rel="stylesheet" href="css/style.css">
-<!-- <link rel="icon" href="images/favicon.png"> -->

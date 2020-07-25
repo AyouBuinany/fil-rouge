@@ -5,13 +5,12 @@ require 'inc/functions_panier.php';
 $erreur = false;
 
 $idc = (isset($_SESSION['client_id'])) ? $_SESSION['client_id'] : 0 ;
-
 //Recuperer le type d'action (Ajouter au panier - changer la quantité - supprimer depuis le panier)
 $action = (isset($_POST['action'])? $_POST['action']:  (isset($_GET['action'])? $_GET['action']:null )) ;
 if($action !== null)
 {
-	if(!isset($_SESSION['client_id']))
-		header('Location: connexion.php');
+	 if($idc===0)
+	 	header('Location: connexion.php');
 
 	if(!in_array($action,array('ajouter', 'supprimer', 'refresh')))
 	$erreur=true;
@@ -25,17 +24,23 @@ if($action !== null)
 if (!$erreur){
    	switch($action){
 		Case "ajouter":
-			ajouterProduit($idProduit, $idc, $db);
+			if($idc!==0 && ajouterProduit($idProduit, $idc, $db)){
+				header("Location:panier.php");
+			}
 			//ajouterProduit($idProduit);
 			break;
 
 		Case "supprimer":
-			supprimerProduit($idProduit, $idc, $db);
+			if(supprimerProduit($idProduit, $idc, $db)){
+				header("Location:panier.php");
+			}
 			//supprimerProduit($idProduit);
 			break;
 
 		Case "refresh" :
-			changerQuantite($idProduit, $idc, $quantite, $db);
+			if(changerQuantite($idProduit, $idc, $quantite, $db)){
+				header("Location:panier.php");
+			}
 			//modifierQTeProduit($idProduit,$quantite);
 			break;
 
@@ -54,11 +59,11 @@ if (!$erreur){
 </head>
 <body class="goto-here">
 	<?php require 'inc/header.php'; ?>
-	<div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
+	<div class="hero-wrap hero-bread" style="background-image: url('images/image-header.jpg');">
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-center justify-content-center">
 				<div class="col-md-9 ftco-animate text-center">
-					<h1 class="mb-0 bread">mon panier</h1>
+					<h1 class="mb-0 bread">MON PANIER</h1>
 				</div>
 			</div>
 		</div>

@@ -14,11 +14,11 @@
 </head>
 <body class="goto-here">
 	<?php require 'inc/header.php'; ?>
-	<div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
+	<div class="hero-wrap hero-bread" style="background-image: url('images/image-header.jpg');">
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-center justify-content-center">
 				<div class="col-md-9 ftco-animate text-center">
-					<p class="breadcrumbs"><span class="mr-2">Produits</span></p>
+				<h1 class="mb-0 bread">Produits</h1>
 				</div>
 			</div>
 		</div>

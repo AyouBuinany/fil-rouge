@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le :  mar. 21 avr. 2020 à 13:34
--- Version du serveur :  10.1.37-MariaDB
--- Version de PHP :  7.3.1
+-- Hôte : 127.0.0.1
+-- Généré le : jeu. 23 juil. 2020 à 20:22
+-- Version du serveur :  10.4.11-MariaDB
+-- Version de PHP : 7.2.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,8 +18,30 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `luxforAll`
+-- Base de données : `luxforall`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(200) NOT NULL,
+  `prenom` varchar(200) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `password` varchar(250) NOT NULL,
+  `telephone` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `admin`
+--
+
+INSERT INTO `admin` (`id`, `nom`, `prenom`, `email`, `password`, `telephone`) VALUES
+(1, 'ayoub', 'kamal', 'ayoub.admin@gmail.com', '$2y$10$VEsJM84P4dKx7p23.9xQm.1m0aOiACQ6k/mIJi5tQBvGSbXCDT67a', '0612890680');
 
 -- --------------------------------------------------------
 
@@ -66,19 +87,7 @@ CREATE TABLE `commentaires` (
   `idProduit` int(11) NOT NULL,
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- --------------------------------------------------------
 
---
--- Structure de la table ` Admin`
---
-create table `Admin`(
-  `id` int(11) NOT NULL,
-  `nom` varchar(200) NOT NULL,
-  `prenom` varchar(200) NOT NULL,
-  `email` varchar(250) NOT NULL,
-  `password` varchar(250) NOT NULL,
-  `telephone` varchar(50) NOT NULL
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 -- --------------------------------------------------------
 
 --
@@ -90,6 +99,19 @@ CREATE TABLE `details_commandes` (
   `idCommande` int(11) NOT NULL,
   `idProduit` int(11) NOT NULL,
   `quantite` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -125,22 +147,24 @@ CREATE TABLE `produits` (
 --
 
 INSERT INTO `produits` (`id`, `libelle`, `prix`, `quantite`, `image`, `description`) VALUES
-(1, 'CHEMISE STRUCTURÉE 1', 190, 120, 'product-1.jpg', 'MARRON CLAIR<br><br>Surchemise coupe décontractée avec col à revers, manches longues et poignets boutonnés. Poches poitrine plaquées à rabat. Effet délavé. Fermeture sur le devant par boutons.\r\n<br><br>\r\nLE MANNEQUIN MESURE : 189 cm'),
-(2, 'CHEMISE STRUCTURÉE 2', 289, 12, 'product-2.jpg', 'MARRON CLAIR<br><br>Surchemise coupe décontractée avec col à revers, manches longues et poignets boutonnés. Poches poitrine plaquées à rabat. Effet délavé. Fermeture sur le devant par boutons.\r\n<br><br>\r\nLE MANNEQUIN MESURE : 189 cm'),
-(3, 'CHEMISE STRUCTURÉE 3', 99, 34, 'product-3.jpg', 'MARRON CLAIR<br><br>Surchemise coupe décontractée avec col à revers, manches longues et poignets boutonnés. Poches poitrine plaquées à rabat. Effet délavé. Fermeture sur le devant par boutons.\r\n<br><br>\r\nLE MANNEQUIN MESURE : 189 cm'),
-(4, 'CHEMISE STRUCTURÉE 4', 199, 85, 'product-4.jpg', 'MARRON CLAIR<br><br>Surchemise coupe décontractée avec col à revers, manches longues et poignets boutonnés. Poches poitrine plaquées à rabat. Effet délavé. Fermeture sur le devant par boutons.\r\n<br><br>\r\nLE MANNEQUIN MESURE : 189 cm'),
-(5, 'CHEMISE STRUCTURÉE 5', 299, 78, 'product-5.jpg', 'MARRON CLAIR<br><br>Surchemise coupe décontractée avec col à revers, manches longues et poignets boutonnés. Poches poitrine plaquées à rabat. Effet délavé. Fermeture sur le devant par boutons.\r\n<br><br>\r\nLE MANNEQUIN MESURE : 189 cm'),
-(6, 'CHEMISE STRUCTURÉE 6', 389, 90, 'product-6.jpg', 'MARRON CLAIR<br><br>Surchemise coupe décontractée avec col à revers, manches longues et poignets boutonnés. Poches poitrine plaquées à rabat. Effet délavé. Fermeture sur le devant par boutons.\r\n<br><br>\r\nLE MANNEQUIN MESURE : 189 cm'),
-(7, 'CHEMISE STRUCTURÉE 7', 149, 32, 'product-7.jpg', 'MARRON CLAIR<br><br>Surchemise coupe décontractée avec col à revers, manches longues et poignets boutonnés. Poches poitrine plaquées à rabat. Effet délavé. Fermeture sur le devant par boutons.\r\n<br><br>\r\nLE MANNEQUIN MESURE : 189 cm'),
-(8, 'CHEMISE STRUCTURÉE 8', 189, 11, 'product-8.jpg', 'MARRON CLAIR<br><br>Surchemise coupe décontractée avec col à revers, manches longues et poignets boutonnés. Poches poitrine plaquées à rabat. Effet délavé. Fermeture sur le devant par boutons.\r\n<br><br>\r\nLE MANNEQUIN MESURE : 189 cm');
+(1, 'T-Shirt', 190, 20, 'product-1.jpg', 'T-Shirt : 189 cm'),
+(2, 'Sac Femme', 289, 10, 'product-2.jpg', 'Sac Femme <br><br>Mini sac besace carré Pénélope Piñatex™ crispé'),
+(3, 'CHEMISE STRUCTURÉE ', 199, 15, 'product-3.jpg', 'MARRON CLAIR<br><br>Surchemise coupe décontractée avec col à revers, manches longues et poignets boutonnés. Poches poitrine plaquées à rabat. Effet délavé. Fermeture sur le devant par boutons.\r\n<br><br>\r\nLE MANNEQUIN MESURE : 189 cm'),
+(4, 'T-Shirt Simple', 299, 3, 'product-4.jpg', 'T-Shirt Simple<br><br>T-Shirt coupe décontractée avec col à revers'),
+(5, 'T-Shirt Polo', 389, 5, 'product-5.jpg', 'T-Shirt Polo<br><br>T-Shirt coupe décontractée avec col à revers, manches longues et poignets boutonnés. Poches poitrine plaquées à rabat. Effet délavé. Fermeture sur le devant par boutons.'),
+(6, 'basket nike', 149, 7, 'product-6.jpg', 'basket nike usa'),
+(7, 'Complet', 189, 13, 'product-13.jpg', 'complet <br><br> Un complet est un vêtement masculin composé dune veste souvent appelée veston, d\n pantalon et parfois dun gilet.');
 
 --
 -- Index pour les tables déchargées
 --
--- Index pour la table `clients`
+
+--
+-- Index pour la table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
+
 --
 -- Index pour la table `clients`
 --
@@ -166,6 +190,12 @@ ALTER TABLE `details_commandes`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `panier`
 --
 ALTER TABLE `panier`
@@ -180,11 +210,12 @@ ALTER TABLE `produits`
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
+
 --
 -- AUTO_INCREMENT pour la table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `clients`
@@ -210,6 +241,11 @@ ALTER TABLE `commentaires`
 ALTER TABLE `details_commandes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
+--
+-- AUTO_INCREMENT pour la table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `panier`

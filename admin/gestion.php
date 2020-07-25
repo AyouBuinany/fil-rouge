@@ -1,5 +1,5 @@
 <?php
-    require '../inc/admin_function.php';
+    require 'inc_admin/admin_function.php';
     if(!isset($_SESSION['admin_id']))
         header('Location: connexion_admin.php');
 
@@ -8,9 +8,11 @@
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//Supprimer produit
+//récupérer la valeur de idproduit 
     $idp= (isset($_GET['idp'])? $_GET['idp']: 0);
+    //récupérer la valeur de action
     $action=(isset($_GET['action'])? $_GET['action'] : null);
+    //Supprimer produit
         if($action=="supprimer" && $idp!=0){
             SupprimerProduit($idp, $db);
             header("location:gestion.php");
@@ -24,13 +26,13 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="goto-here">
-	<?php require '../inc/header_admin.php'; ?>
-	<div class="hero-wrap hero-bread" style="background-image: url('../images/bg_6.jpg');">
+<?php require 'inc_admin/header_admin.php'; ?>
+	<div class="hero-wrap hero-bread" style="background-image: url('../images/image-header.jpg');">
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-center justify-content-center">
 				<div class="col-md-9 ftco-animate text-center">
 					<p class="breadcrumbs"><span class="mr-2">Profil</span></p>
-					<h1 class="mb-0 bread">Mon compte</h1>
+					<h1 class="mb-0 bread">Mon compte Admin</h1>
 				</div>
 			</div>
 		</div>
@@ -78,7 +80,7 @@
                                            <td> <p> <?php echo $produit['description'] ?></p></td>
                                            <td>
                                                <p>
-                                                   <a type="button" name="supprimer" class="btn btn-2 btn-danger" href="admin.php?action=supprimer&idp=<?php echo $produit['id'] ?>">SUPPRIMER</a>
+                                                   <a type="button" name="supprimer" class="btn btn-2 btn-danger" href="gestion.php?action=supprimer&idp=<?php echo $produit['id'] ?>">SUPPRIMER</a>
                                                     <a type="button"  name="modifier" class="btn btn-2 btn-primary" href="modifier_produit.php?idp=<?php echo $produit['id'] ?>">MODIFIER</a>
                                                 </p>
                                         </td>
@@ -92,5 +94,8 @@
                     <a type="button" name="ajouter" class="btn btn-success" href="ajouter_produit.php">AJOUTER</a>
                 </div>
                                                 </div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

@@ -1,16 +1,13 @@
 <?php
-    require 'inc/functions_panier.php';
-    if(!isset($_SESSION['client_id']))
-		header('Location: connexion.php');
-    
-    //récupérer tous les commandes du client
-    $sql = "SELECT * FROM commandes WHERE idClient = :idc";
-    $stmt = $db->prepare($sql);    
-    $stmt->bindValue(':idc', $_SESSION['client_id']);
+      require 'inc_admin/admin_function.php';
+	  if(!isset($_SESSION['admin_id']))
+		  header('Location: connexion_admin.php');
+	  //récupérer tous les commandes des clients
+    $sql = "SELECT * FROM commandes ";
+    $stmt = $db->prepare($sql);
     $stmt->execute();
     $commandes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
-    //fonction pour récupérer nombre des produits dans la commande
+    //fonction pour récupérer nombre des produits dans chaque commande
     function nombreProduitsCommande($idComm, $db){
         $sql = "SELECT COUNT(id) AS num FROM details_commandes WHERE idCommande = :idcom";
         $stmt = $db->prepare($sql);
@@ -18,22 +15,30 @@
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         return $row['num'];
-    }
+	}
+//fonction pour récupérer nom des client pour chaque commande
+	function nomClientCommander($idComm, $db){
+        $sql = "SELECT nom,prenom FROM clients AS c,commandes AS cd  WHERE c.id = cd.idClient AND cd.id=:idcom";
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(':idcom', $idComm);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $row['nom'] ." ". $row["prenom"];
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Profil | LuxForAll</title>
-    <?php require 'inc/head-tags.php'; ?>
+	<title>Gestion Commande | LuxForAll</title>
+	<link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="goto-here">
-	<?php require 'inc/header.php'; ?>
-	<div class="hero-wrap hero-bread" style="background-image: url('images/image-header.jpg');">
+<?php require 'inc_admin/header_admin.php'; ?>
+	<div class="hero-wrap hero-bread" style="background-image: url('../images/image-header.jpg');">
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-center justify-content-center">
 				<div class="col-md-9 ftco-animate text-center">
-					<p class="breadcrumbs"><span class="mr-2">Profil</span></p>
-					<h1 class="mb-0 bread">Mon compte</h1>
+					<h1 class="mb-0 bread">Gestion Commande</h1>
 				</div>
 			</div>
 		</div>
@@ -44,12 +49,12 @@
                     <div class="col-md-10">
                         <div class="profile-head">
 							<h5>
-								<?php echo $_SESSION['client_nom'] ." ". $_SESSION['client_prenom'] ?>
+								<?php echo $_SESSION['admin_nom'] ." ". $_SESSION['admin_prenom'] ?>
 							</h5>
 							<h6>
-								<?php echo $_SESSION['client_email'] ?>
+								<?php echo $_SESSION['admin_email'] ?>
 							</h6>
-                            <p class="proile-rating">Téléphone : <span><?php echo $_SESSION['client_telephone'] ?></span></p>
+							<p class="proile-rating">Téléphone : <span><?php echo $_SESSION['admin_telephone'] ?></span></p>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Commandes</a>
@@ -59,9 +64,6 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-md-2">
-                        <a class="btn btn-primary py-3 px-4" href="modifier_client.php" >Modifier</a>
                     </div>
                 </div>
                 <div class="row">
@@ -102,7 +104,7 @@
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <label>Référence</label>
+                                        <label>Nom et Prenom</label>
                                     </div>
                                     <div class="col-md-3">
                                         <label>Adresse</label>
@@ -117,7 +119,7 @@
                                 <?php foreach ($commandes as $commande) { ?>
                                     <div class="row">
                                         <div class="col-md-3">
-                                            <p>COMM#<?php echo $commande['id'] ?></p>
+                                            <p><?php echo nomClientCommander($commande['id'],$db); ?></p>
                                         </div>
                                         <div class="col-md-3">
                                             <p><?php echo $commande['adresse'] ?></p>
@@ -135,7 +137,8 @@
                     </div>
                 </div>
         </div>
-  <?php require 'inc/footer.php'; ?>
-  <?php require 'inc/foot-tags.php'; ?>
+		<script src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

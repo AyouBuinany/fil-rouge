@@ -46,7 +46,7 @@
 			<div class="row">
 			<div class="col-sm-6 col-md-6 col-lg-4">
 					<div class="product">
-					<img alt="Colorlib Template" class="img-fluid" src="images/product-1.jpg">
+					<img alt="Colorlib Template" class="img-fluid" src="images/product-4.jpg">
 						<div class="text py-3 px-3">
 							<h3><a href="#">T-Shirt</a></h3>
 							<div class="d-flex">

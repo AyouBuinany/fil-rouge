@@ -1,6 +1,5 @@
 <?php
 	require 'inc/functions_panier.php';
-
 	//vérifier si l'id du produit existe dans l'url ou pas!
 	$idp = isset($_GET['idp'])? $_GET['idp'] : header('Location: produits.php');
 	//récupérer les informations du produit depuis la base de données
@@ -47,7 +46,7 @@
 	function clientNomComplet($idc, $db)
 	{
 		$sql = "SELECT * FROM clients WHERE id = :idc";
-		$stmt = $db->prepare($sql);    
+		$stmt = $db->prepare($sql);
 		$stmt->bindValue(':idc', $idc);
 		$stmt->execute();
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -73,11 +72,11 @@
 </head>
 <body class="goto-here">
 	<?php require 'inc/header.php'; ?>
-	<div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
+	<div class="hero-wrap hero-bread" style="background-image: url('images/image-header.jpg');">
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-center justify-content-center">
 				<div class="col-md-9 ftco-animate text-center">
-					<h1 class="mb-0 bread">détail du produit</h1>
+					<h1 class="mb-0 bread">DÉTAIL DU PRODUIT</h1>
 				</div>
 			</div>
 		</div>
@@ -130,7 +129,7 @@
 							<p style="color: #000;"><?php echo $produit['quantite'] ?> pièce disponible</p>
 						</div>
 					</div>
-					<p><a class="btn btn-black py-3 px-5" href="panier?action=ajouter&amp;idp=<?php echo $produit['id'] ?>&amp;q=1">Ajouter au panier</a></p>
+					<p><a class="btn btn-black py-3 px-5" href="panier.php?action=ajouter&amp;idp=<?php echo $produit['id'] ?>&amp;q=1">Ajouter au panier</a></p>
 				</div>
 			</div>
 		</div>
@@ -155,7 +154,7 @@
 					<h3 class="mb-5">Laissez un commentaire</h3>
 					<?php if(!isset($_SESSION['client_id'])){ ?>
 						<div class="row justify-content-center">
-							<a class="btn btn-primary py-3 px-4" href="connexion">S'identifer</a>
+							<a class="btn btn-primary py-3 px-4" href="connexion.php">S'identifer</a>
 						</div>
 					<?php } else { ?>
 						<form action="" method="POST" class="p-5 bg-light">
@@ -179,8 +178,7 @@
 			   /* + quantity Produit*/
 	          $('.quantity-plus').click(function(){
 	               var quantity = parseInt($('#quantity').val());
-				    $('#quantity').val(quantity + 1);
-					console.log("hhh"+ quantity);
+				    $('#quantity').val(quantity + 1);x
 	           });
 			   /* - quantity Produit*/
 	            $('.quantity-min').click(function(){

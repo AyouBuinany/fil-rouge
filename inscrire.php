@@ -4,14 +4,14 @@
 	$erreur = "";
 	if(isset($_POST['inscrire']) && !empty($_POST['inscrire']))
 	{
-		$nom = $_POST['nom'];
-		$prenom = $_POST['prenom'];
-		$email = $_POST['email'];
-		$telephone = $_POST['telephone'];
-		$password = $_POST['password'];
+		$nom =htmlspecialchars($_POST['nom']);
+		$prenom = htmlspecialchars($_POST['prenom']);
+		$email = htmlspecialchars($_POST['email']);
+		$telephone =htmlspecialchars($_POST['telephone']);
+		$password =htmlspecialchars($_POST['password']);
 
-		$pattern = '#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#';
-		$pattern2 = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i";
+		$pattern_password = '#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).{8,}$#';
+		$pattern_email = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/";
 		
 		//Verifier si email n'existe pas déjà
 		$sql = "SELECT COUNT(email) AS num FROM clients WHERE email = :email";
@@ -23,12 +23,12 @@
 		
 		if($row['num'] > 0)
 			$erreur .= "Email déjà ultilisé<br>";
-		else if(!preg_match($pattern2, $email))
+		else if(!preg_match($pattern_email, $email))
 			$erreur .= "Email n'est pas valide<br>";
 		
 		if($password != $_POST['password2'])
 			$erreur .= "Mot de passe n'est pas identique<br>";
-		else if(!preg_match($pattern, $password))
+		else if(!preg_match($pattern_password, $password))
 			$erreur .= "Mot de passe n'est pas très fort<br>";
 
 		if($erreur === ""){

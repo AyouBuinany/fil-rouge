@@ -17,9 +17,7 @@
     if($client === false){
         $erreur .= "Email insérée n'existe pas<br>";
     } else{
-        
         $validPassword = password_verify($password, $client['password']);
-        
         if($validPassword){
 
             $_SESSION['client_id'] = $client['id'];
@@ -27,8 +25,7 @@
 			$_SESSION['client_prenom'] = $client['prenom'];
 			$_SESSION['client_email'] = $client['email'];
 			$_SESSION['client_telephone'] = $client['telephone'];
-            
-            header('Location: produits.php');            
+            header('Location: produits.php');
         } else{
             $erreur .= "Mot de passe est incorrect<br>";
         }
@@ -44,11 +41,11 @@
 </head>
 <body class="goto-here">
 	<?php require 'inc/header.php'; ?>
-	<div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
+	<div class="hero-wrap hero-bread" style="background-image: url('images/image-header.jpg');">
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-center justify-content-center">
 				<div class="col-md-9 ftco-animate text-center">
-					<h1 class="mb-0 bread">S'identifier</h1>
+				<h1 class="mb-0 bread">S'identifier</h1>
 				</div>
 			</div>
 		</div>

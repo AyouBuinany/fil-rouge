@@ -5,9 +5,9 @@
 		header('Location: connexion');
 	if(isset($_POST['commander']) && !empty($_POST['commander']))
 	{
-		$adresse = $_POST['adresse'];
-		$ville = $_POST['ville'];
-		$codePostal = $_POST['codePostal'];
+		$adresse = htmlspecialchars($_POST['adresse']);
+		$ville = htmlspecialchars($_POST['ville']);
+		$codePostal =htmlspecialchars($_POST['codePostal']);
 		$date = date("Y-m-d h:i:s");
 		$prixTotal = totalPrixPanier($_SESSION['client_id'], $db)+20;
 
@@ -54,11 +54,11 @@
 </head>
 <body class="goto-here">
 	<?php require 'inc/header.php'; ?>
-	<div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
+	<div class="hero-wrap hero-bread" style="background-image: url('images/image-header.jpg');">
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-center justify-content-center">
 				<div class="col-md-9 ftco-animate text-center">
-					<h1 class="mb-0 bread">Check-out</h1>
+				<h1 class="mb-0 bread">Check-out</h1>
 				</div>
 			</div>
 		</div>

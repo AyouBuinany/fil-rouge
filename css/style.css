@@ -8170,8 +8170,10 @@ h1, h2, h3, h4, h5,
     -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); }
     .ftco-navbar-light.scrolled .nav-item.active > a {
+      /* color blue*/
       color: #307af1 !important; }
     .ftco-navbar-light.scrolled .nav-item.cta > a {
+      /* color white*/
       color: #fff !important;
       background: #307af1;
       border: none !important; }
@@ -8248,12 +8250,12 @@ h1, h2, h3, h4, h5,
       z-index: 99;
       font-weight: 300; }
       .hero-wrap .slider-text .breadcrumbs span {
-        color: black; }
+        color: white; }
         .hero-wrap .slider-text .breadcrumbs span a {
           color: #000000; }
     .hero-wrap .slider-text .bread {
       font-weight: 800;
-      color: #000000;
+      color: white;
       font-size: 30px;
       font-family: "Open Sans", Arial, sans-serif;
       letter-spacing: 3px;

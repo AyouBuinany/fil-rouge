@@ -13,7 +13,7 @@ function changerQuantite($idp, $idc, $quantite, $db)
    if($stmt->execute())
       return true;
 }
-
+//Ajouter Produit dans Panier
 function ajouterProduit($idp, $idc, $db)
 {
    if(produitExiste($idp, $idc, $db)) {
@@ -25,7 +25,7 @@ function ajouterProduit($idp, $idc, $db)
       $data = [
 			'idProduit' => $idp,
 			'idClient' => $idc,
-			'quantite' => 1,
+			'quantite' =>1,
 		];
 		$sql = "INSERT INTO panier (idProduit, idClient, quantite) VALUES (:idProduit, :idClient, :quantite)";
 		$stat= $db->prepare($sql);
@@ -34,11 +34,11 @@ function ajouterProduit($idp, $idc, $db)
       }
    }
 }
-
+// Produit Existe dans panier 
 function produitExiste($idp, $idc, $db)
 {
    $sql = "SELECT COUNT(id) AS num FROM panier WHERE idProduit = :idp AND idClient = :idc";
-   $stmt = $db->prepare($sql);    
+   $stmt = $db->prepare($sql);
    $stmt->bindValue(':idp', $idp);
    $stmt->bindValue(':idc', $idc);
    $stmt->execute();
@@ -48,6 +48,7 @@ function produitExiste($idp, $idc, $db)
    else
       return false;
 }
+
 
 function quantiteProduit($idp, $idc, $db)
 {
@@ -70,7 +71,7 @@ function supprimerProduit($idp, $idc, $db)
       return true;
    }
 }
-
+// Nombre Produits dans Panier
 function nombreProduits($idc, $db)
 {
    $sql = "SELECT COUNT(id) AS num FROM panier WHERE idClient = :idc";
@@ -80,7 +81,7 @@ function nombreProduits($idc, $db)
 	$row = $stmt->fetch(PDO::FETCH_ASSOC);
    return $row['num'];
 }
-
+//
 function totalPrixPanier($idc, $db)
 {
    $total = 0;

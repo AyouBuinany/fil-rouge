@@ -1,13 +1,12 @@
 <?php
-	require '../inc/admin_function.php';
+	require 'inc_admin/admin_function.php';
 
 	$erreur = "";
 
 	if(isset($_POST['connexion_admin']) && !empty($_POST['connexion_admin']))
 	{
-	$email = !empty($_POST['email']) ? trim($_POST['email']) : null;
-    $password = !empty($_POST['password']) ? trim($_POST['password']) : null;
-    
+	$email = !empty($_POST['email']) ? trim(htmlspecialchars($_POST['email'])) : null;
+    $password = !empty($_POST['password']) ? trim(htmlspecialchars($_POST['password'])) : null;
     //Retrieve the user account information for the given username.
     $sql = "SELECT * FROM admin WHERE email = :email";
     $stmt = $db->prepare($sql);
@@ -21,7 +20,7 @@
         $validPassword = password_verify($password, $admin['password']);
         
         if($validPassword){
-
+			$_SESSION["admin"]=$admin;
             $_SESSION['admin_id'] = $admin['id'];
 			$_SESSION['admin_nom'] = $admin['nom'];
 			$_SESSION['admin_prenom'] = $admin['prenom'];

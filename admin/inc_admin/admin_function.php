@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require '../inc/config.php';
 
 //Ajouter Produit
 function AjouterProduit($libelle,$prix,$quantite,$image,$description, $db)
@@ -44,7 +44,12 @@ function SupprimerProduit($idp, $db)
    $stat= $db->prepare($sql);
    $stat->bindValue(':idp', $idp);
    if($stat->execute()) {
+      $sql2 = "DELETE FROM panier WHERE idProduit = :idp";
+      $stat2= $db->prepare($sql2);
+      $stat2->bindValue(':idp', $idp);
+      if($stat2->execute()) {
       return true;
+      }
    }
 }
 

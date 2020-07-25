@@ -1,5 +1,5 @@
 <?php
-    require '../inc/admin_function.php';
+    require 'inc_admin/admin_function.php';
     if(!isset($_SESSION['admin_id']))
     header('Location: connexion_admin.php');
 
@@ -36,7 +36,7 @@ if(sizeof($produit)>0){
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body class="goto-here">
-<?php require '../inc/header_admin.php'; ?>
+<?php require 'inc_admin/header_admin.php'; ?>
     <section class="ftco-section contact-section bg-light">
 		<div class="container">
 			<div class="row justify-content-center">

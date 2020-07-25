@@ -31,13 +31,13 @@
           <h2 class="ftco-heading-2">Menu</h2>
           <ul class="list-unstyled">
             <li>
-              <a class="py-2 d-block" href="index">Accueil</a>
+              <a class="py-2 d-block" href="index.php">Accueil</a>
             </li>
             <li>
-              <a class="py-2 d-block" href="produits">Produits</a>
+              <a class="py-2 d-block" href="produits.php">Produits</a>
             </li>
             <li>
-              <a class="py-2 d-block" href="panier">Panier</a>
+              <a class="py-2 d-block" href="panier.php">Panier</a>
             </li>
           </ul>
         </div>
