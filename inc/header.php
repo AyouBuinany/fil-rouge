@@ -16,7 +16,7 @@
 				</li>
 				<?php if(isset($_SESSION['client_id'])){ ?>
 				
-				<li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bonjour, <?php echo $_SESSION['client_nom'] ?></a>
+				<li class="nav-item dropdown"><a href="profile.php" class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bonjour, <?php echo $_SESSION['client_nom'] ?></a>
 					<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 						<a class="dropdown-item" href="profile.php">Profil</a>
 						<a class="dropdown-item" href="inc/deconnexion.php">Déconnexion</a>

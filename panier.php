@@ -16,7 +16,7 @@ if($action !== null)
 	$erreur=true;
 
 	//récuperation des variables en POST ou GET
-	$quantite = (isset($_POST['q'])? $_POST['q']:  (isset($_GET['q'])? $_GET['q']:null )) ;
+	$quantite = (isset($_POST['q'])? $_POST['q']:  (isset($_GET['q'])? $_GET['q']:1 )) ;
 	$idProduit = (isset($_POST['idp'])? $_POST['idp']:  (isset($_GET['idp'])? $_GET['idp']:null )) ;
 }
 
@@ -24,7 +24,7 @@ if($action !== null)
 if (!$erreur){
    	switch($action){
 		Case "ajouter":
-			if($idc!==0 && ajouterProduit($idProduit, $idc, $db)){
+			if($idc!==0 && ajouterProduit($idProduit, $idc,$quantite, $db)){
 				header("Location:panier.php");
 			}
 			//ajouterProduit($idProduit);
@@ -106,7 +106,6 @@ if (!$erreur){
 									</td>
 									<td class="product-name">
 										<h3><?php echo $product['libelle'] ?></h3>
-										<p>Chemise structurée imprimée à pois easy</p>
 									</td>
 									<td class="price"><?php echo $product['prix'] ?></td>
 									<td class="quantity">

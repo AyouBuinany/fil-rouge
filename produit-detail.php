@@ -3,10 +3,6 @@
 	//vérifier si l'id du produit existe dans l'url ou pas!
 	$idp = isset($_GET['idp'])? $_GET['idp'] : header('Location: produits.php');
 	//récupérer les informations du produit depuis la base de données
-	/*$query = $db->prepare("SELECT * FROM produits WHERE id='$idp'");
-	$query->execute();
-	$produit = $query->fetch();
-	*/
 	$produit=infosProduit($idp, $db);
 	//récupérer les commentaires depuis la base de données
 	$query = $db->prepare("SELECT * FROM commentaires WHERE idProduit='$idp'");
@@ -129,7 +125,7 @@
 							<p style="color: #000;"><?php echo $produit['quantite'] ?> pièce disponible</p>
 						</div>
 					</div>
-					<p><a class="btn btn-black py-3 px-5" href="panier.php?action=ajouter&amp;idp=<?php echo $produit['id'] ?>&amp;q=1">Ajouter au panier</a></p>
+					<p><a class="btn btn-black py-3 px-5" id="AjPanier" href=""><input  id="idProduit" type="hidden" value="<?=$produit['id']?>">Ajouter au panier</a></p>
 				</div>
 			</div>
 		</div>
@@ -178,8 +174,9 @@
 			   /* + quantity Produit*/
 	          $('.quantity-plus').click(function(){
 	               var quantity = parseInt($('#quantity').val());
-				    $('#quantity').val(quantity + 1);x
+				    $('#quantity').val(quantity + 1);
 	           });
+			   
 			   /* - quantity Produit*/
 	            $('.quantity-min').click(function(){
 	               var quantity = parseInt($('#quantity').val());
@@ -187,6 +184,16 @@
 	                   $('#quantity').val(quantity - 1);
 	               }
 	           });
+				//idp input type hidden value= id Produit
+				var idp=$('#idProduit').val();
+				//Link pour ajouter au panier et get new valeur de quantity
+				$("#AjPanier").hover(function(){
+					var q=$('#quantity').val();
+					var url = 'panier.php?action=ajouter&idp=' + idp + '&q=' + q;
+					// modifier attribute href de la valeur url
+					$(this).attr("href",url);
+				}
+				);
 	       });
 	</script>
 </body>
