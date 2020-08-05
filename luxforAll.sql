@@ -139,6 +139,7 @@ CREATE TABLE `produits` (
   `prix` int(11) NOT NULL,
   `quantite` int(5) NOT NULL,
   `image` varchar(100) NOT NULL,
+  `categorie` varchar(100) NOT NULL,
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -146,14 +147,16 @@ CREATE TABLE `produits` (
 -- Déchargement des données de la table `produits`
 --
 
-INSERT INTO `produits` (`id`, `libelle`, `prix`, `quantite`, `image`, `description`) VALUES
-(1, 'T-Shirt', 190, 20, 'product-1.jpg', 'T-Shirt : 189 cm'),
-(2, 'Sac Femme', 289, 10, 'product-2.jpg', 'Sac Femme <br><br>Mini sac besace carré Pénélope Piñatex™ crispé'),
-(3, 'CHEMISE STRUCTURÉE ', 199, 15, 'product-3.jpg', 'MARRON CLAIR<br><br>Surchemise coupe décontractée avec col à revers, manches longues et poignets boutonnés. Poches poitrine plaquées à rabat. Effet délavé. Fermeture sur le devant par boutons.\r\n<br><br>\r\nLE MANNEQUIN MESURE : 189 cm'),
-(4, 'T-Shirt Simple', 299, 3, 'product-4.jpg', 'T-Shirt Simple<br><br>T-Shirt coupe décontractée avec col à revers'),
-(5, 'T-Shirt Polo', 389, 5, 'product-5.jpg', 'T-Shirt Polo<br><br>T-Shirt coupe décontractée avec col à revers, manches longues et poignets boutonnés. Poches poitrine plaquées à rabat. Effet délavé. Fermeture sur le devant par boutons.'),
-(6, 'basket nike', 149, 7, 'product-6.jpg', 'basket nike usa'),
-(7, 'Complet', 189, 13, 'product-13.jpg', 'complet <br><br> Un complet est un vêtement masculin composé dune veste souvent appelée veston, d\n pantalon et parfois dun gilet.');
+INSERT INTO `produits` (`id`, `libelle`, `prix`, `quantite`, `image`,`categorie`, `description`) VALUES
+(1, 'Short en jeans taille S', 190, 20, 'Short_jeans.jpg','Short', 'short en jeans nouveau taille S'),
+(2, 'Casquette rouge', 289, 10, 'Casquette.jpg','Casquette', 'Casquette rouge Porte quelques fois'),
+(3, 'CHEMISE  Ralph Lauren vert olive ', 199, 15, 'Chemise-polo.jpg', 'CHEMISE','Chemise Ralph Lauren taille L slimfit Excelent état porté une seule fois a un mariage. 100% cotton.'),
+(4, 'T-shirt noir hiboux', 299, 3, 't-shirtBlack.jpg','T-shirt', 't-shirt neuf jamais porté'),
+(5, 'Jean homme guess', 389, 5, 'jean.jpg','Jean', 'jean foncématière un peu abîmé mais portabletaille US 32taille EU 42'),
+(6, 'Chaussures football PUMA', 149, 7, 'Chaussures_football.jpg','Chaussures', 'neuves jamais portées, taille 44.'),
+(7, 'Basket Nike', 300, 7, 'Basket_Nike.jpg','Chaussures',  'basket Nike acheter en avril très bonne état mise 2/3 fois. taille petit convient à un 21'),
+(8, 'Blouson moto furygan', 400, 7, 'BlousonMoto_furygan.jpg','Veste', 'Bonjour je vend mon blouson de moto furygan très bonne état protection dorsale et coques épaules , vendu avec la doublure hiver .'),
+(9, 'Veste Puma', 189, 13, 'Veste-Puma.jpg','Veste', 'Veste Puma noir et orange en bon état 14ans .');
 
 --
 -- Index pour les tables déchargées

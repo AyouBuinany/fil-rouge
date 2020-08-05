@@ -1,10 +1,23 @@
 <?php
 	require 'inc/functions_panier.php';
-
+	//récupérer tous les categorie des produits depuis la base de données
+	$query1 = $db->prepare("SELECT DISTINCT categorie FROM produits where quantite>0");
+	$query1->execute();
+	$categories = $query1->fetchAll();
 	//récupérer tous les produits depuis la base de données
-	$query = $db->prepare("SELECT * FROM produits where quantite>0");
-	$query->execute();
-	$produits = $query->fetchAll();
+	$query2 = $db->prepare("SELECT * FROM produits where quantite>0");
+	$query2->execute();
+	$produits = $query2->fetchAll();
+	//récupérer tous les produits depuis la base de données pour chaque categorie
+	if(isset($_POST["Recherche"])){
+		$categorie=  htmlspecialchars($_POST["categorie"]);
+		if($categorie=="all")
+			header("Location:produits.php");
+		else
+		$query3 = $db->prepare("SELECT * FROM produits where quantite>0 AND categorie='$categorie'");
+		$query3->execute();
+		$produits = $query3->fetchAll();
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +31,7 @@
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-center justify-content-center">
 				<div class="col-md-9 ftco-animate text-center">
-				<h1 class="mb-0 bread">Produits</h1>
+				<h1 class="mb-0 bread h_p">Produits</h1>
 				</div>
 			</div>
 		</div>
@@ -27,6 +40,27 @@
 		<div class="container">
 		<div class="text text-2 py-md-5">
 			<h2 class="mb-4">Produits</h2>
+			<form action="" method="POST" class="p-5 bg-light">
+			<div class="input-group" id="categorie">
+<select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon" name="categorie">
+	<optgroup label="Categorie"></optgroup>
+	<option value="all"> toute les produits </option>
+	<?php
+					if (is_array($categories) || is_object($categories))
+						{
+							foreach ($categories as $categorie) {
+						?>
+			<option value="<?=$categorie[0];?>"><?=$categorie[0];?></option>
+						<?php
+							}
+						}
+						?>
+				</select>
+				<div class="input-group-append">
+					<button class="btn btn-outline-secondary" type="submit" name="Recherche">Recherche</button>
+				</div>
+</div>
+					</form>
 			<div class="row">
 				<div class="col-md-8 col-lg-12 order-md-last">
 					<div class="row">

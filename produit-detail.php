@@ -81,7 +81,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 mb-5 ftco-animate">
-					<a class="image-popup" href="images/menu-2.jpg"><img alt="Colorlib Template" class="img-fluid" src="images/<?php echo $produit['image'] ?>"></a>
+					<a class="image-popup" href="images/<?php echo $produit['image'] ?>"><img alt="Image <?php echo $produit['id'] ?>" class="img-fluid" src="images/<?php echo $produit['image'] ?>"></a>
 				</div>
 				<div class="col-lg-6 product-details pl-md-5 ftco-animate">
 					<h3><?php echo $produit['libelle'] ?></h3>

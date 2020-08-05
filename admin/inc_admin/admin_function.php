@@ -1,16 +1,23 @@
 <?php
 require '../inc/config.php';
-
+  //récupérer tous les categorie des produits depuis la base de données
+  function categories($db){
+  $query1 = $db->prepare("SELECT DISTINCT categorie FROM produits where quantite>0");
+  $query1->execute();
+  $categories = $query1->fetchAll();
+  return $categories;
+  }
 //Ajouter Produit
-function AjouterProduit($libelle,$prix,$quantite,$image,$description, $db)
+function AjouterProduit($libelle,$prix,$quantite,$image,$categorie,$description, $db)
 {
-   $sql = "INSERT INTO `produits`(`libelle`, `prix`, `quantite`, `image`, `description`) VALUES (:libelle,:prix,:quantite,:image,:description)";
+   $sql = "INSERT INTO `produits`(`libelle`, `prix`, `quantite`, `image`,`categorie`, `description`) VALUES (:libelle,:prix,:quantite,:image,:categorie,:description)";
    $stat= $db->prepare($sql);
    $data=[
         'libelle' => $libelle,
         'prix' => $prix,
         'quantite' => $quantite,
         'image'=>$image,
+        'categorie'=>$categorie,
         'description' => $description
    ];
    if($stat->execute($data)) {
@@ -20,14 +27,15 @@ function AjouterProduit($libelle,$prix,$quantite,$image,$description, $db)
 
 
 //Modifier Produit
-function ModifierProduit($idp,$libelle,$prix,$quantite,$description, $db)
+function ModifierProduit($idp,$libelle,$prix,$quantite,$categorie,$description, $db)
 {
-   $sql = "UPDATE `produits` SET `libelle`=:libelle,`prix`=:prix,`quantite`=:quantite,`description`=:description WHERE id=:idp";
+   $sql = "UPDATE `produits` SET `libelle`=:libelle,`prix`=:prix,`quantite`=:quantite,`categorie`=:categorie,`description`=:description WHERE id=:idp";
    $stat= $db->prepare($sql);
    $data=[
         'libelle' => $libelle,
         'prix' => $prix,
         'quantite' => $quantite,
+        'categorie'=>$categorie,
         'description' => $description,
         'idp'=>$idp
    ];

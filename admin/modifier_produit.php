@@ -3,6 +3,8 @@
     if(!isset($_SESSION['admin_id']))
     header('Location: connexion_admin.php');
 
+ //récupérer tous les categorie des produits depuis la base de données
+ $categories=categories($db);
 
     $idp= (isset($_GET['idp'])? $_GET['idp']:    header("location:gestion.php"));
     $libelle=$prix=$quantite=$image=$description=""; //les champs vide
@@ -17,6 +19,7 @@ if(sizeof($produit)>0){
     $prix=$produit["prix"];
     $quantite=$produit["quantite"];
     $image=$produit["image"];
+    $categorie=$produit["categorie"];
     $description=$produit["description"];
 }
    /* Modifier produit */
@@ -24,8 +27,9 @@ if(sizeof($produit)>0){
         $libelle= htmlspecialchars($_POST["libelle"]);
         $prix= htmlspecialchars($_POST["prix"]);
         $quantite= htmlspecialchars($_POST["quantite"]);
+        $categorie= htmlspecialchars($_POST["categorie"]);
         $description= htmlspecialchars($_POST["description"]);
-            ModifierProduit($idp,$libelle,$prix,$quantite,$description, $db);
+            ModifierProduit($idp,$libelle,$prix,$quantite,$categorie,$description, $db);
             header("location:gestion.php");
         }
 ?>
@@ -57,6 +61,23 @@ if(sizeof($produit)>0){
 						<div class="form-group">
                         <label>image </label> 	<input type="text" class="form-control" name="image" value="<?= $image;?>" readonly>
                         </div>
+                        <div class="form-group">
+                        <label>Categorie</label>
+                        <input list="categorie" class="form-control" name="categorie" value="<?=$categorie;?>" />
+
+                    <datalist id="categorie">
+                    <?php
+					if (is_array($categories) || is_object($categories))
+						{
+							foreach ($categories as $categorie) {
+						?>
+			<option value="<?=$categorie[0];?>">
+						<?php
+							}
+						}
+						?>
+                    </datalist>
+						</div>
                         <div class="form-group">
                         <label>description </label> <textarea class="form-control"  name="description" ><?= $description;?></textarea>
 						</div>

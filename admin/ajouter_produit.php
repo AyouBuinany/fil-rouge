@@ -1,16 +1,19 @@
 <?php
     require 'inc_admin/admin_function.php';
    if(!isset($_SESSION['admin_id']))
-		header('Location: connexion_admin.php');
+        header('Location: connexion_admin.php');
+  //récupérer tous les categorie des produits depuis la base de données
+        $categories=categories($db);
    /* Ajouter produit */
         if(isset($_POST["ajouter"]) && !empty($_POST["ajouter"])){
         $libelle= htmlspecialchars($_POST["libelle"]);
         $prix= htmlspecialchars($_POST["prix"]);
         $quantite= htmlspecialchars($_POST["quantite"]);
         $image= $_POST["image"];
-        $description= htmlspecialchars($_POST["libelle"]);
+        $categorie=htmlspecialchars($_POST["categorie"]);
+        $description= htmlspecialchars($_POST["description"]);
         //appel function AjouterProduit
-        AjouterProduit($libelle,$prix,$quantite,$image,$description, $db);
+        AjouterProduit($libelle,$prix,$quantite,$image,$categorie,$description, $db);
             header("location:gestion.php");
         }
 ?>
@@ -42,6 +45,23 @@
 						<div class="form-group">
                         <label>image </label><input type="file" class="form-control" name="image">
                         </div>
+                        <div class="form-group">
+                        <label>Categorie</label>
+                        <input list="categorie" class="form-control" name="categorie" />
+
+                    <datalist id="categorie">
+                    <?php
+					if (is_array($categories) || is_object($categories))
+						{
+							foreach ($categories as $categorie) {
+						?>
+			<option value="<?=$categorie[0];?>">
+						<?php
+							}
+						}
+						?>
+                    </datalist>
+						</div>
                         <div class="form-group">
                         <label>description </label><textarea class="form-control" name="description" required>
                             </textarea>
