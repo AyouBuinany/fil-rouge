@@ -858,6 +858,7 @@ h1, h2, h3, h4, h5,
 			background: $primary;
 		}
 		img{
+			width: 100%;
 			-webkit-transform: scale(1.0);
 			-moz-transform: scale(1.0);
 			-ms-transform: scale(1.0);
@@ -2453,10 +2454,14 @@ overflow-x: scroll;
 	font-weight: 600;
 	color: #000000;
 }
-.smallQuantite{
+  .smallQuantite{
     background-color: red;
     color: white;
   }
 #categorie{
 	margin-bottom: 25px;
+}
+.btn-2{
+	border-radius: 15px;
+	margin: 5px;
 }

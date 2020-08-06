@@ -57,7 +57,7 @@
 						?>
 				</select>
 				<div class="input-group-append">
-					<button class="btn btn-outline-secondary" type="submit" name="Recherche">Recherche</button>
+					<button class="btn btn-outline-primary" type="submit" name="Recherche">Recherche</button>
 				</div>
 </div>
 					</form>

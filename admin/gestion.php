@@ -80,8 +80,8 @@
                                            <td> <p> <?php echo $produit['description'] ?></p></td>
                                            <td>
                                                <p>
-                                                   <a type="button" name="supprimer" class="btn btn-2 btn-danger" href="gestion.php?action=supprimer&idp=<?php echo $produit['id'] ?>">SUPPRIMER</a>
-                                                    <a type="button"  name="modifier" class="btn btn-2 btn-primary" href="modifier_produit.php?idp=<?php echo $produit['id'] ?>">MODIFIER</a>
+                                                   <a  name="supprimer" class="btn btn-2 btn-danger" href="gestion.php?action=supprimer&idp=<?php echo $produit['id'] ?>">SUPPRIMER</a>
+                                                    <a   name="modifier" class="btn btn-2 btn-primary" href="modifier_produit.php?idp=<?php echo $produit['id'] ?>">MODIFIER</a>
                                                 </p>
                                         </td>
                                                 </tr>
@@ -91,7 +91,7 @@
                                                 </div>
                                                 </div>
                     <div style="margin-bottom:50px; text-align:center;">
-                    <a type="button" name="ajouter" class="btn btn-success" href="ajouter_produit.php">AJOUTER</a>
+                    <a  name="ajouter" class="btn btn-2 btn-success" href="ajouter_produit.php">AJOUTER</a>
                 </div>
                                                 </div>
 <script src="../js/jquery.min.js"></script>
