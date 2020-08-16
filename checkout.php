@@ -1,6 +1,5 @@
 <?php
 	require 'inc/functions_panier.php';
-
 	if(!isset($_SESSION['client_id']))
 		header('Location: connexion');
 	if(isset($_POST['commander']) && !empty($_POST['commander']))
@@ -31,9 +30,10 @@
 				$data2 = [
 					'idCommande' => $idCommande,
 					'idProduit' => $produit['idProduit'],
+					'taille' => $produit['taille'],
 					'quantite' => $produit['quantite'],
 				];
-				$sql2 = "INSERT INTO details_commandes (idCommande, idProduit, quantite) VALUES (:idCommande, :idProduit, :quantite)";
+				$sql2 = "INSERT INTO details_commandes (idCommande, idProduit,taille, quantite) VALUES (:idCommande, :idProduit,:taille,:quantite)";
 				$stat2= $db->prepare($sql2);
 				$stat2->execute($data2);
 				//update quantite de produit

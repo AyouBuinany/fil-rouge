@@ -23,7 +23,7 @@
 <html lang="en">
 <head>
 	<title>Profil Admin | LuxForAll</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <?php require 'inc_admin/header_tags.php'; ?>
 </head>
 <body class="goto-here">
 <?php require 'inc_admin/header_admin.php'; ?>
@@ -94,8 +94,7 @@
                     <a  name="ajouter" class="btn btn-2 btn-success" href="ajouter_produit.php">AJOUTER</a>
                 </div>
                                                 </div>
-<script src="../js/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/main.js"></script>
+                                                <?php require 'inc_admin/footer_admin.php'; ?>
+                                                <?php require 'inc_admin/footer-tags.php'; ?>
 </body>
 </html>

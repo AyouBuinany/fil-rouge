@@ -2,7 +2,7 @@
     require 'inc_admin/admin_function.php';
    if(!isset($_SESSION['admin_id']))
         header('Location: connexion_admin.php');
-  //récupérer tous les categorie des produits depuis la base de données
+  //récupérer tous les categories des produits depuis la base de données
         $categories=categories($db);
    /* Ajouter produit */
         if(isset($_POST["ajouter"]) && !empty($_POST["ajouter"])){
@@ -21,7 +21,7 @@
 <html lang="en">
 <head>
 	<title>Ajouter Produit | LuxForAll</title>
-<link rel="stylesheet" href="../css/style.css">
+    <?php require 'inc_admin/header_tags.php'; ?>
 </head>
 <body class="goto-here">
 <?php require 'inc_admin/header_admin.php'; ?>
@@ -74,5 +74,7 @@
 			</div>
 		</div>
 	</section>
+    <?php require 'inc_admin/footer_admin.php'; ?>
+                                                <?php require 'inc_admin/footer-tags.php'; ?>
 </body>
 </html>

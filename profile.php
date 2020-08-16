@@ -1,8 +1,7 @@
 <?php
     require 'inc/functions_panier.php';
     if(!isset($_SESSION['client_id']))
-		header('Location: connexion.php');
-    
+        header('Location: connexion.php');
     //récupérer tous les commandes du client
     $sql = "SELECT * FROM commandes WHERE idClient = :idc";
     $stmt = $db->prepare($sql);    

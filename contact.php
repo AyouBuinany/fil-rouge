@@ -8,15 +8,17 @@
 		$nom = trim(htmlspecialchars($_POST['nom']));
 		$email = trim(htmlspecialchars($_POST['email']));
 		$message = trim(htmlspecialchars($_POST['message']));
+		$date = date("Y-m-d h:i:s");
 
 		$data = [
 			'nom' => $nom,
 			'email' => $email,
 			'message' => $message,
+			'date' => $date,
 		];
 
 		//requet pour inserer les données dans la base de données
-		$sql = "INSERT INTO messages (nom, email, message) VALUES (:nom, :email, :message)";
+		$sql = "INSERT INTO messages (nom, email, message,date) VALUES (:nom, :email, :message,:date)";
 		$stat= $db->prepare($sql);
 		//vérifier si le message a été enregistré dans la base de données
 		if($stat->execute($data)) {

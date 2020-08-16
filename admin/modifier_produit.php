@@ -37,7 +37,7 @@ if(sizeof($produit)>0){
 <html lang="en">
 <head>
 	<title>Modifier Produit | LuxForAll</title>
-<link rel="stylesheet" href="../css/style.css">
+    <?php require 'inc_admin/header_tags.php'; ?>
 </head>
 <body class="goto-here">
 <?php require 'inc_admin/header_admin.php'; ?>
@@ -89,5 +89,7 @@ if(sizeof($produit)>0){
 			</div>
 		</div>
 	</section>
+    <?php require 'inc_admin/footer_admin.php'; ?>
+                    <?php require 'inc_admin/footer-tags.php'; ?>
 </body>
 </html>

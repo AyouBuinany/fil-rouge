@@ -11,7 +11,7 @@
     <div class="row mb-5">
       <div class="col-md">
         <div class="ftco-footer-widget mb-4">
-          <h2 class="ftco-heading-2">LuxForAll</h2> <i class="fas fa-shopping-cart"></i>
+          <h2 class="ftco-heading-2">LuxForAll</h2>
           <p>Découvrez la nouvelle collection de cette saison construite autour de pièces de base et d'articles tendance.</p>
           <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
             <li class="ftco-animate">

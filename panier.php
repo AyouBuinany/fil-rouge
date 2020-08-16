@@ -5,6 +5,8 @@ require 'inc/functions_panier.php';
 $erreur = false;
 
 $idc = (isset($_SESSION['client_id'])) ? $_SESSION['client_id'] : 0 ;
+//Recuperer le type valeur de taille pour chaque produit
+$taille = (isset($_GET['taille'])) ? $_GET['taille'] : 'S';
 //Recuperer le type d'action (Ajouter au panier - changer la quantité - supprimer depuis le panier)
 $action = (isset($_POST['action'])? $_POST['action']:  (isset($_GET['action'])? $_GET['action']:null )) ;
 if($action !== null)
@@ -24,7 +26,7 @@ if($action !== null)
 if (!$erreur){
    	switch($action){
 		Case "ajouter":
-			if($idc!==0 && ajouterProduit($idProduit, $idc,$quantite, $db)){
+			if($idc!==0 && ajouterProduit($idProduit, $idc,$quantite,$taille, $db)){
 				header("Location:panier.php");
 			}
 			//ajouterProduit($idProduit);

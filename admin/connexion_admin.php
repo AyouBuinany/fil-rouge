@@ -39,9 +39,7 @@
 <html lang="en">
 <head>
 	<title>S'identifier Admin | LuxForAll </title>
-	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/bootstrap-datepicker.css">
+	<?php require 'inc_admin/header_tags.php'; ?>
 </head>
 <body class="goto-here">
 	<section class="ftco-section contact-section bg-light">

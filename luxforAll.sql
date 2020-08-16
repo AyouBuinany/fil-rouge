@@ -98,6 +98,7 @@ CREATE TABLE `details_commandes` (
   `id` int(11) NOT NULL,
   `idCommande` int(11) NOT NULL,
   `idProduit` int(11) NOT NULL,
+  `taille` varchar(80),
   `quantite` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -111,7 +112,8 @@ CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
   `nom` varchar(200) NOT NULL,
   `email` varchar(200) NOT NULL,
-  `message` text NOT NULL
+  `message` text NOT NULL,
+  `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -124,6 +126,7 @@ CREATE TABLE `panier` (
   `id` int(11) NOT NULL,
   `idProduit` int(11) NOT NULL,
   `idClient` int(11) NOT NULL,
+  `taille` varchar(80),
   `quantite` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 

@@ -40,6 +40,7 @@
 		<div class="container">
 		<div class="text text-2 py-md-5">
 			<h2 class="mb-4">Produits</h2>
+			<pre></pre>
 			<form action="" method="POST" class="p-5 bg-light">
 			<div class="input-group" id="categorie">
 <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon" name="categorie">
@@ -50,7 +51,7 @@
 						{
 							foreach ($categories as $categorie) {
 						?>
-			<option value="<?=$categorie[0];?>"><?=$categorie[0];?></option>
+					<option value="<?=$categorie[0];?>"><?=$categorie[0];?></option>
 						<?php
 							}
 						}

@@ -80,14 +80,12 @@
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6 mb-5 ftco-animate">
-					<a class="image-popup" href="images/<?php echo $produit['image'] ?>"><img alt="Image <?php echo $produit['id'] ?>" class="img-fluid" src="images/<?php echo $produit['image'] ?>"></a>
+				<div class="col-lg-6 mb-5 ftco ftco-animate">
+					<a class="image-popup" href="images/<?php echo $produit['image'] ?>" target="_blank"><img alt="Image <?php echo $produit['id'] ?>" class="img-fluid img-details" src="images/<?php echo $produit['image'] ?>"></a>
 				</div>
 				<div class="col-lg-6 product-details pl-md-5 ftco-animate">
 					<h3><?php echo $produit['libelle'] ?></h3>
 					<div class="rating d-flex">
-						<p class="text-left mr-4"> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a></p>
-						<p class="text-left mr-4"><a class="mr-2" href="#" style="color: #000;">100 <span style="color: #bbb;">Évaluation</span></a></p>
 						<p class="text-left"><a class="mr-2" href="#" style="color: #000;"><?php if(ProduitCommander($idp,$db)>0) 
 						echo ProduitCommander($idp,$db); else echo 1; ?> <span style="color: #bbb;">Vendue</span></a></p>
 					</div>
@@ -99,17 +97,17 @@
 								<div class="select-wrap">
 									<div class="icon">
 										<span class="ion-ios-arrow-down"></span>
-									</div><select class="form-control" id="" name="">
-										<option value="">
+									</div><select class="form-control" id="taille" name="">
+										<option value="S">
 											S
 										</option>
-										<option value="">
+										<option value="M">
 											M
 										</option>
-										<option value="">
+										<option value="L">
 											L
 										</option>
-										<option value="">
+										<option value="XL">
 											XL
 										</option>
 									</select>
@@ -189,7 +187,8 @@
 				//Link pour ajouter au panier et get new valeur de quantity
 				$("#AjPanier").hover(function(){
 					var q=$('#quantity').val();
-					var url = 'panier.php?action=ajouter&idp=' + idp + '&q=' + q;
+					var t= $('#taille').val();
+					var url = 'panier.php?action=ajouter&idp=' + idp +'&taille=' + t + '&q=' + q;
 					// modifier attribute href de la valeur url
 					$(this).attr("href",url);
 				}

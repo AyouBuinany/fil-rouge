@@ -60,5 +60,12 @@ function SupprimerProduit($idp, $db)
       }
    }
 }
-
+	//récupérer le nombre de message 
+	function nombreMessages($db){
+   $sql = "SELECT COUNT(id) AS num FROM messages";
+	$stmt = $db->prepare($sql);
+	$stmt->execute();
+	$row = $stmt->fetch(PDO::FETCH_ASSOC);
+   return $row['num'];
+   }
 ?>

@@ -2,7 +2,7 @@
 
 require 'config.php';
 //changerQuantite
-function changerQuantite($idp, $idc, $quantite, $db)
+function changerQuantite($idp, $idc,$quantite, $db)
 {
    $sql = "UPDATE panier SET quantite = :quantite  WHERE idProduit = :idp AND idClient = :idc";
    $stmt = $db->prepare($sql);
@@ -14,7 +14,7 @@ function changerQuantite($idp, $idc, $quantite, $db)
       return true;
 }
 //Ajouter Produit dans Panier
-function ajouterProduit($idp, $idc,$quantity, $db)
+function ajouterProduit($idp, $idc, $quantity, $taille, $db)
 {
    if(produitExiste($idp, $idc, $db)) {
       $quantite = quantiteProduit($idp, $idc, $db);
@@ -24,10 +24,11 @@ function ajouterProduit($idp, $idc,$quantity, $db)
    else {
       $data = [
 			'idProduit' => $idp,
-			'idClient' => $idc,
+         'idClient' => $idc,
+         'taille'=>$taille,
 			'quantite' =>$quantity,
 		];
-		$sql = "INSERT INTO panier (idProduit, idClient, quantite) VALUES (:idProduit, :idClient, :quantite)";
+		$sql = "INSERT INTO panier (idProduit, idClient,taille, quantite) VALUES (:idProduit, :idClient,:taille, :quantite)";
 		$stat= $db->prepare($sql);
 		if($stat->execute($data)) {
          return true;
@@ -96,7 +97,7 @@ function totalPrixPanier($idc, $db)
 function lesProduitsExistent($idc, $db)
 {
    $sql = "SELECT * FROM panier WHERE idClient = :idc";
-   $stmt = $db->prepare($sql);    
+   $stmt = $db->prepare($sql);
    $stmt->bindValue(':idc', $idc);
    $stmt->execute();
    $produits = $stmt->fetchAll(PDO::FETCH_ASSOC);

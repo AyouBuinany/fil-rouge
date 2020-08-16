@@ -9450,4 +9450,18 @@ textarea.form-control {
   border-radius: 15px;
   margin: 5px; }
 
+.img-details {
+  width: 90%; }
+
+.ftco {
+  text-align: center; }
+
+.message-list li {
+  padding: 0px;
+  margin: 0px 0 30px 0;
+  /* float: left; */
+  width: 100%;
+  clear: both;
+  list-style: none; }
+
 /*# sourceMappingURL=style.css.map */
