@@ -45,8 +45,8 @@
 						<div class="vcard bio"><img alt="Image placeholder" src="../images/client.png"></div>
 						<div class="comment-body">
 							<h3><?php echo $message['nom'];?></h3>
-							<div class="meta"><?php echo $message['date'] ?></div>
                             <p><?php echo $message['message'] ?></p>
+							<div class="meta"><?php echo $message['date'] ?></div>
                              <a href="messages.php?idMessage=<?php echo $message['id'] ?>" class="btn btn-success"><span class="icon-check"></span></a>
                         </div>
                     </li>

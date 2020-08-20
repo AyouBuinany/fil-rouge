@@ -7722,7 +7722,7 @@ h1, h2, h3, h4, h5,
       z-index: 99;
       font-weight: 300; }
       .hero-wrap .slider-text .breadcrumbs span {
-        color: black; }
+        color: #f0f0f0; }
         .hero-wrap .slider-text .breadcrumbs span a {
           color: #000000; }
     .hero-wrap .slider-text .bread {
@@ -8636,7 +8636,7 @@ textarea.form-control {
   display: block; }
 
 .ftco-section {
-  padding: 9em 0;
+  padding: 25px 0 5em;
   position: relative; }
   @media (max-width: 767.98px) {
     .ftco-section {

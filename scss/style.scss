@@ -338,7 +338,7 @@ h1, h2, h3, h4, h5,
 			z-index: 99;
 			font-weight: 300;
 			span{
-				color: rgba(0,0,0,1);
+				color: rgb(240, 240, 240);
 				a{
 					color: $black;
 				}
@@ -427,7 +427,7 @@ h1, h2, h3, h4, h5,
 				content: '';
 				border:1px solid rgba(255,255,255,.3);
 				@include border-radius(50%);
-			}	
+			}
 			&:hover, &:focus{
 				outline: none !important;
 			}
@@ -1440,7 +1440,7 @@ textarea.form-control {
 
 
 .ftco-section {
-	padding: 9em 0;
+	padding: 25px 0 5em;
 	position: relative;
 	@include media-breakpoint-down(sm){
 		padding: 6em 0;

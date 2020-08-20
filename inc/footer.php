@@ -37,6 +37,9 @@
               <a class="py-2 d-block" href="produits.php">Produits</a>
             </li>
             <li>
+              <a class="py-2 d-block" href="contact.php">Contact</a>
+            </li>
+            <li>
               <a class="py-2 d-block" href="panier.php">Panier</a>
             </li>
           </ul>

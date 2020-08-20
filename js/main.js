@@ -1,6 +1,3 @@
-(function($) {
-
-	"use strict";
 //dropdown header
 //aria-expanded="true" dropdown show
 //aria-expanded="false" dropdown hide
@@ -18,14 +15,14 @@
 
 	// scroll
 	//navbar function scroll
-	var scrollWindow = function() {
+	var scrollWindow = function () {
 		$(window).scroll(function(){
 			var $w = $(this),
 					st = $w.scrollTop(),
 					navbar = $('.ftco_navbar');
 			if (st > 150) {
 				if ( !navbar.hasClass('scrolled') ) {
-					navbar.addClass('scrolled sleep');	
+					navbar.addClass('scrolled');	
 				}
 			}
 			if (st < 150) {
@@ -47,5 +44,4 @@
 		});
 	};
 	scrollWindow();
-})(jQuery);
 
