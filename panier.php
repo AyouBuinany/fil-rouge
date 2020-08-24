@@ -20,7 +20,9 @@ if($action !== null)
 	//récuperation des variables en POST ou GET
 	$quantite = (isset($_POST['q'])? $_POST['q']:  (isset($_GET['q'])? $_GET['q']:1 )) ;
 	$idProduit = (isset($_POST['idp'])? $_POST['idp']:  (isset($_GET['idp'])? $_GET['idp']:null )) ;
+	$quantite_produit=infosProduit($idProduit, $db)["quantite"];
 }
+
 
 //Par rapport au type d'action voulu en fait l'appel à la fonction requise
 if (!$erreur){
@@ -29,6 +31,7 @@ if (!$erreur){
 			if($idc!==0 && ajouterProduit($idProduit, $idc,$quantite,$taille, $db)){
 				header("Location:panier.php");
 			}
+			echo $idProduit;
 			//ajouterProduit($idProduit);
 			break;
 
@@ -112,7 +115,14 @@ if (!$erreur){
 									<td class="price"><?php echo $product['prix'] ?></td>
 									<td class="quantity">
 										<div class="input-group mb-3">
-											<input class="quantity form-control input-number" max="100" min="1" name="quantity" id="inputQ<?php echo $produit['idProduit'] ?>" onchange="changeFunction(<?php echo $produit['idProduit'] ?>);" type="number" value="<?php echo $produit['quantite'] ?>">
+										<?php if($produit['quantite'] > $product['quantite'] ){
+											echo "<script> alert('stock insuffisant');</script>";
+											$value=$product["quantite"];
+										}else{
+												$value=$produit["quantite"];
+											}
+											?>
+											<input class="quantity form-control input-number" max="100" min="1" name="quantity" id="inputQ<?php echo $produit['idProduit'] ?>" onchange="changeFunction(<?php echo $produit['idProduit'] ?>);" type="number" value="<?php echo $value;?>">
 										</div>
 									</td>
 									<td class="total"><?php echo $product['prix'] * $produit['quantite'] ?></td>
@@ -120,7 +130,7 @@ if (!$erreur){
 								<?php } } } ?>
 							</tbody>
 						</table>
-						<a class="btn btn-primary py-3 px-4 float-right" href="panier.php">Mettre à jour</a>
+						<a class="btn btn-primary py-3 px-4 float-right" href="panier.php">Mettre à jour </a>
 					</div>
 				</div>
 			</div>
