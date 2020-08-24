@@ -138,8 +138,8 @@
 						<div class="vcard bio"><img alt="Image placeholder" src="images/client.png"></div>
 						<div class="comment-body">
 							<h3><?php echo clientNomComplet($commentaire['idClient'], $db) ?></h3>
-							<div class="meta"><?php echo $commentaire['date'] ?></div>
 							<p><?php echo $commentaire['commentaire'] ?></p>
+							<div class="meta"><?php echo $commentaire['date'] ?></div>
 						</div>
 					</li>
 					<?php } ?>
