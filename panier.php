@@ -115,7 +115,8 @@ if (!$erreur){
 									<td class="price"><?php echo $product['prix'] ?></td>
 									<td class="quantity">
 										<div class="input-group mb-3">
-										<?php if($produit['quantite'] > $product['quantite'] ){
+										<?php
+										 if($produit['quantite'] > $product['quantite'] ){
 											echo "<script> alert('stock insuffisant');</script>";
 											$value=$product["quantite"];
 										}else{
