@@ -96,7 +96,7 @@
 							<div class="form-group d-flex">
 								<div class="select-wrap">
 									<div class="icon">
-										<span class="ion-ios-arrow-down"></span>
+										<span class="fas fa-angle-down"></span>
 									</div><select class="form-control" id="taille" name="">
 										<option value="S">
 											S
@@ -116,7 +116,7 @@
 						</div>
 						<div class="w-100"></div>
 						<div class="input-group col-md-6 d-flex mb-3">
-							<span class="input-group-btn mr-2"><button class="quantity-min btn" data-field="" data-type="minus" type="button"><span class="input-group-btn mr-2"><i class="ion-ios-remove"></i></span></button></span> <input class="form-control input-number" id="quantity" max="100" min="1" name="quantity" type="text" value="1"> <span class="input-group-btn ml-2"><button class="quantity-plus btn" data-field="" data-type="plus" type="button"><span class="input-group-btn ml-2"><i class="ion-ios-add"></i></span></button></span>
+							<span class="input-group-btn mr-2"><button class="quantity-min btn" data-field="" data-type="minus" type="button"><span class="input-group-btn mr-2 black"><i class="fas fa-minus"></i></span></button></span> <input class="form-control input-number" id="quantity" max="100" min="1" name="quantity" type="text" value="1"> <span class="input-group-btn ml-2"><button class="quantity-plus btn" data-field="" data-type="plus" type="button"><span class="input-group-btn ml-2 black"><i class="fas fa-plus"></i></span></button></span>
 						</div>
 						<div class="w-100"></div>
 						<div class="col-md-12">

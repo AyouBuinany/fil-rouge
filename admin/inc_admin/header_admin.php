@@ -3,7 +3,8 @@
 <div class="container">
 		<a class="navbar-brand" href="gestion.php">LuxForAll</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="oi oi-menu"></span> Menu
+		<span class="fas fa-bars">
+			</span> Menu
 		</button>
 		<div class="collapse navbar-collapse" id="ftco-nav">
 			<ul class="navbar-nav ml-auto">
@@ -13,7 +14,7 @@
 						<a class="dropdown-item" href="../inc/deconnexion.php">Déconnexion</a>
 					</div>
 				</li>
-				<li class="nav-item cta cta-colored"><a href="messages.php" class="nav-link"><span class="icon-message"></span>[<?php if(isset($_SESSION['admin_id'])) echo nombreMessages($db); else echo "0"; ?>]</a></li>
+				<li class="nav-item cta cta-colored"><a href="messages.php" class="nav-link"><span class="fas fa-envelope margin"></span>[<?php if(isset($_SESSION['admin_id'])) echo nombreMessages($db); else echo "0"; ?>]</a></li>
 			</ul>
 	</div>
 </nav>

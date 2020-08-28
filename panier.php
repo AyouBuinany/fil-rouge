@@ -104,7 +104,7 @@ if (!$erreur){
 							?>
 								<tr class="text-center">
 									<td class="product-remove">
-										<a href="panier.php?action=supprimer&idp=<?php echo $produit['idProduit'] ?>"><span class="ion-ios-close"></span></a>
+										<a href="panier.php?action=supprimer&idp=<?php echo $produit['idProduit'] ?>"><span class="fas fa-times"></span></a>
 									</td>
 									<td class="image-prod">
 										<div class="img" style="background-image:url(images/<?php echo $product['image'] ?>);"></div>

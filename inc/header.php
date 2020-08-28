@@ -3,7 +3,8 @@
 	<div class="container">
 		<a class="navbar-brand" href="index.php">LuxForAll</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="oi oi-menu"></span> Menu
+			<span class="fas fa-bars">
+			</span> Menu
 		</button>
 		<div class="collapse navbar-collapse" id="ftco-nav">
 			<ul class="navbar-nav ml-auto">
@@ -27,7 +28,7 @@
 				<li class="nav-item active"><a href="inscrire.php" class="nav-link">S'inscrire</a></li>
 				<li class="nav-item active"><a href="connexion.php" class="nav-link">Connexion</a></li>
 				<?php }?>
-				<li class="nav-item cta cta-colored"><a href="panier.php" class="nav-link"><span class="icon-shopping_cart"></span>[<?php if(isset($_SESSION['client_id'])) echo nombreProduits($_SESSION['client_id'], $db); else echo "0"; ?>]</a></li>
+				<li class="nav-item cta cta-colored"><a href="panier.php" class="nav-link"><span class="fa fa-shopping-cart margin"></span>[<?php if(isset($_SESSION['client_id'])) echo nombreProduits($_SESSION['client_id'], $db); else echo "0"; ?>]</a></li>
 			</ul>
 		</div>
 	</div>

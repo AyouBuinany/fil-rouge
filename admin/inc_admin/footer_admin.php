@@ -7,13 +7,13 @@
           <p>Découvrez la nouvelle collection de cette saison construite autour de pièces de base et d'articles tendance.</p>
           <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
             <li class="ftco-animate">
-              <a href="#"><span class="icon-twitter"></span></a>
+              <a href="#"><span class="twitter"></span></a>
             </li>
             <li class="ftco-animate">
-              <a href="#"><span class="icon-facebook"></span></a>
+              <a href="#"><span class="facebook"></span></a>
             </li>
             <li class="ftco-animate">
-              <a href="#"><span class="icon-instagram"></span></a>
+              <a href="#"><span class="instagram"></span></a>
             </li>
           </ul>
         </div>

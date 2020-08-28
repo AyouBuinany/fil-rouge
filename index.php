@@ -49,7 +49,7 @@
 									<p class="price"><span class="mr-2 price-dc">120.00 DH</span><span class="price-sale">80.00 DH</span></p>
 								</div>
 								<div class="rating">
-									<p class="text-right"><a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a></p>
+								<p class="text-right"><a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a></p>
 								</div>
 							</div>
 						</div>
@@ -66,7 +66,7 @@
 									<p class="price"><span>200.00 DH</span></p>
 								</div>
 								<div class="rating">
-									<p class="text-right"><a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a></p>
+								<p class="text-right"><a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a></p>
 								</div>
 							</div>
 						</div>
@@ -83,7 +83,7 @@
 									<p class="price"><span>140.00 DH</span></p>
 								</div>
 								<div class="rating">
-									<p class="text-right"><a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a></p>
+								<p class="text-right"><a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a></p>
 								</div>
 							</div>
 						</div>
@@ -101,7 +101,7 @@
 									<p class="price"><span class="mr-2 price-dc">120.00 DH</span><span class="price-sale">80.00 DH</span></p>
 								</div>
 								<div class="rating">
-									<p class="text-right"><a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a></p>
+								<p class="text-right"><a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a></p>
 								</div>
 							</div>
 						</div>
@@ -118,7 +118,7 @@
 									<p class="price"><span>300.00 DH</span></p>
 								</div>
 								<div class="rating">
-									<p class="text-right"><a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a></p>
+								<p class="text-right"><a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a></p>
 								</div>
 							</div>
 						</div>
@@ -135,7 +135,7 @@
 									<p class="price"><span>400.00 DH</span></p>
 								</div>
 								<div class="rating">
-									<p class="text-right"><a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a></p>
+								<p class="text-right"><a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a></p>
 								</div>
 							</div>
 						</div>

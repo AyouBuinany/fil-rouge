@@ -7503,6 +7503,20 @@ h1, h2, h3, h4, h5,
   font-weight: 400;
   color: #000000; }
 
+.twitter, .facebook, .instagram {
+  width: 100%;
+  height: 100%;
+  background-size: cover; }
+
+.facebook {
+  background-image: url("../images/icons/facebook.png"); }
+
+.instagram {
+  background-image: url("../images/icons/instagram.png"); }
+
+.twitter {
+  background-image: url("../images/icons/twitter.png"); }
+
 .text-primary {
   color: #007bff !important; }
 
@@ -7525,6 +7539,12 @@ h1, h2, h3, h4, h5,
   margin: auto; }
 
 .h_p {
+  color: #fff; }
+
+.margin {
+  margin: 2px 5px; }
+
+.white {
   color: #fff; }
 
 .ftco-navbar-light {
@@ -8280,6 +8300,10 @@ h1, h2, h3, h4, h5,
     .product:hover .text .bottom-area {
       opacity: 1; }
 
+.black {
+  color: #000000;
+  font-size: 10px; }
+
 .product-details h3 {
   font-size: 30px;
   font-weight: 400; }
@@ -8407,8 +8431,9 @@ h1, h2, h3, h4, h5,
     border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important; }
     .table tbody tr td.product-remove a {
       bordeR: 1px solid rgba(0, 0, 0, 0.1);
-      padding: 5px 10px;
-      color: #000000; }
+      padding: 3px 7px;
+      color: #fff;
+      background: #eb6464; }
       .table tbody tr td.product-remove a:hover {
         border: 1px solid #f31414;
         background: #f31414; }

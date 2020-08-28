@@ -4,7 +4,7 @@
       <div class="mouse">
         <a class="mouse-icon" href="#">
         <div class="mouse-wheel">
-          <span class="ion-ios-arrow-up"></span>
+          <span class="fas fa-chevron-up"></span>
         </div></a>
       </div>
     </div>
@@ -15,13 +15,13 @@
           <p>Découvrez la nouvelle collection de cette saison construite autour de pièces de base et d'articles tendance.</p>
           <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
             <li class="ftco-animate">
-              <a href="#"><span class="icon-twitter"></span></a>
+              <a href="#"><span class="twitter"></span></a>
             </li>
             <li class="ftco-animate">
-              <a href="#"><span class="icon-facebook"></span></a>
+              <a href="#"><span class="facebook"></span></a>
             </li>
             <li class="ftco-animate">
-              <a href="#"><span class="icon-instagram"></span></a>
+              <a href="#"><span class="instagram"></span></a>
             </li>
           </ul>
         </div>
@@ -71,12 +71,12 @@
           <h2 class="ftco-heading-2">Contacter nous</h2>
           <div class="block-23 mb-3">
             <ul>
-              <li><span class="icon icon-map-marker"></span><span class="text">Safi, Maroc</span></li>
+              <li><span class="fas fa-map-marker-alt margin"></span><span class="text"> Safi, Maroc</span></li>
               <li>
-                <a href="#"><span class="icon icon-phone"></span><span class="text">+212 6 80214562</span></a>
+                <a href="#"><span class="fas fa-phone-alt margin"></span><span class="text"> +212 6 80214562</span></a>
               </li>
               <li>
-                <a href="#"><span class="icon icon-envelope"></span><span class="text">safi@LuxForAll.com</span></a>
+                <a href="#"><span class="fas fa-envelope margin"></span><span class="text"> safi@LuxForAll.com</span></a>
               </li>
             </ul>
           </div>
@@ -99,11 +99,11 @@
 			<div class="col-lg-12 d-block">
 				<div class="row d-flex">
 					<div class="col-md pr-4 d-flex topper align-items-center">
-						<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+						<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="fas fa-phone-alt white"></span></div>
 						<span class="text">+212 6 80214562</span>
 					</div>
 					<div class="col-md pr-4 d-flex topper align-items-center">
-						<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+						<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="fas fa-paper-plane white"></span></div>
 						<span class="text">safi@LuxForAll.com</span>
 					</div>
 					<div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">

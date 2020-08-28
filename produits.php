@@ -31,7 +31,7 @@
 		<div class="container">
 			<div class="row no-gutters slider-text align-items-center justify-content-center">
 				<div class="col-md-9 ftco-animate text-center">
-				<h1 class="mb-0 bread h_p">Produits</h1>
+				<h1 class="mb-0 bread h_p">Produits </h1>
 				</div>
 			</div>
 		</div>
@@ -81,10 +81,10 @@
 											<p class="price"><span class="price-sale"><?php echo $produit['prix'] ?>.00 DHs</span></p>
 										</div>
 										<div class="rating">
-											<p class="text-right"><a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a> <a href="#"><span class="ion-ios-star-outline"></span></a></p>
+											<p class="text-right"><a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a> <a href="#"><span class="far fa-star"></span></a></p>
 										</div>
 									</div>
-									<p class="bottom-area d-flex px-3"><a class="add-to-cart text-center py-2 mr-1" href="panier.php?action=ajouter&idp=<?php echo $produit['id'] ?>&q=1" ><span>Ajouter au panier <i class="ion-ios-add ml-1"></i></span></a> <a class="buy-now text-center py-2" href="produit-detail.php?idp=<?php echo $produit['id'] ?>">Acheter<span><i class="ion-ios-cart ml-1"></i></span></a></p>
+									<p class="bottom-area d-flex px-3"><a class="add-to-cart text-center py-2 mr-1" href="panier.php?action=ajouter&idp=<?php echo $produit['id'] ?>&q=1" ><span>Ajouter au panier <i class="fas fa-plus ml-1"></i></span></a> <a class="buy-now text-center py-2" href="produit-detail.php?idp=<?php echo $produit['id'] ?>">Acheter<span><i class="fas fa-shopping-cart ml-1"></i></span></a></p>
 								</div>
 							</div>
 						</div>
