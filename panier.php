@@ -31,7 +31,7 @@ if (!$erreur){
 			if($idc!==0 && ajouterProduit($idProduit, $idc,$quantite,$taille, $db)){
 				header("Location:panier.php");
 			}
-			echo $idProduit;
+			
 			//ajouterProduit($idProduit);
 			break;
 
@@ -117,7 +117,7 @@ if (!$erreur){
 										<div class="input-group mb-3">
 										<?php
 										 if($produit['quantite'] > $product['quantite'] ){
-											echo "<script> alert('stock insuffisant');</script>";
+											echo "<script> alert('stock insuffisant .');</script>";
 											$value=$product["quantite"];
 										}else{
 												$value=$produit["quantite"];
