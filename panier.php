@@ -20,7 +20,6 @@ if($action !== null)
 	//récuperation des variables en POST ou GET
 	$quantite = (isset($_POST['q'])? $_POST['q']:  (isset($_GET['q'])? $_GET['q']:1 )) ;
 	$idProduit = (isset($_POST['idp'])? $_POST['idp']:  (isset($_GET['idp'])? $_GET['idp']:null )) ;
-	$quantite_produit=infosProduit($idProduit, $db)["quantite"];
 }
 
 
