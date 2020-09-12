@@ -84,6 +84,7 @@
 						<?php
 						if (is_array($produits) || is_object($produits))
 						{
+							if(sizeof($produits)>0){
 							foreach ($produits as $produit) {
 						?>
 						<div class="col-sm-6 col-md-6 col-lg-4 ftco-animate">
@@ -104,7 +105,15 @@
 								</div>
 							</div>
 						</div>
-						<?php }} ?>
+						<?php }
+						}else{
+						echo 	"
+						<div class='alert mx-auto alert-danger text-center' role='alert'>
+						 produit indisponible :)!
+						</div>";
+						}
+					}
+						?>
 					</div>
 					<div class="row mt-5">
 						<div class="col text-center">
