@@ -82,8 +82,8 @@
                                            <td> <p> <?php echo $produit['description'] ?></p></td>
                                            <td>
                                                <p>
-                                                   <a  name="supprimer" class="btn btn-2 btn-danger" href="gestion.php?action=supprimer&idp=<?php echo $produit['id'] ?>">SUPPRIMER</a>
-                                                    <a   name="modifier" class="btn btn-2 btn-primary" href="modifier_produit.php?idp=<?php echo $produit['id'] ?>">MODIFIER</a>
+                                                   <a  name="supprimer" class="btn btn-2 btn-danger" href="gestion.php?action=supprimer&idp=<?php echo $produit['id'] ?>" title="Gestion - supprimer produit">SUPPRIMER</a>
+                                                    <a   name="modifier" class="btn btn-2 btn-primary" href="modifier_produit.php?idp=<?php echo $produit['id'] ?>" title="Gestion - modifier produit">MODIFIER</a>
                                                 </p>
                                         </td>
                                                 </tr>
@@ -93,7 +93,7 @@
                                                 </div>
                                                 </div>
                     <div style="margin-bottom:50px; text-align:center;">
-                    <a  name="ajouter" class="btn btn-2 btn-success" href="ajouter_produit.php">AJOUTER</a>
+                    <a  name="ajouter" class="btn btn-2 btn-success" href="ajouter_produit.php" title="Gestion - ajouter produit">AJOUTER</a>
                 </div>
                                                 </div>
                                                 <?php require 'inc_admin/footer_admin.php'; ?>
