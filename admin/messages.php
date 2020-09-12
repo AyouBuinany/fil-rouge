@@ -47,7 +47,7 @@
 							<h3><?php echo $message['nom'];?></h3>
                             <p><?php echo $message['message'] ?></p>
 							<div class="meta"><?php echo $message['date'] ?></div>
-                             <a href="messages.php?idMessage=<?php echo $message['id'] ?>" class="btn btn-success"><span class="fas fa-check"></span></a>
+                             <a href="messages.php?idMessage=<?php echo $message['id'] ?>" class="btn btn-success" title="Messages - supprimer message"><span class="fas fa-check"></span></a>
                         </div>
                     </li>
 					<?php } ?>
