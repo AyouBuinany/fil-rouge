@@ -103,7 +103,7 @@ if (!$erreur){
 							?>
 								<tr class="text-center">
 									<td class="product-remove">
-										<a href="panier.php?action=supprimer&idp=<?php echo $produit['idProduit'] ?>"><span class="fas fa-times"></span></a>
+										<a href="panier.php?action=supprimer&idp=<?php echo $produit['idProduit'] ?>" title="panier - supprimer produit"><span class="fas fa-times"></span></a>
 									</td>
 									<td class="image-prod">
 										<div class="img" style="background-image:url(images/<?php echo $product['image'] ?>);"></div>
@@ -144,7 +144,7 @@ if (!$erreur){
 						<hr>
 						<p class="d-flex total-price"><span>Total</span> <span><?php if($idc != 0) echo totalPrixPanier($idc, $db)+20; else echo "20"; ?>.00 DHs</span></p>
 					</div>
-					<p class="text-center"><a class="btn btn-primary py-3 px-4" href="checkout.php">Passer à la caisse</a></p>
+					<p class="text-center"><a class="btn btn-primary py-3 px-4" href="checkout.php" title="Payment">Passer à la caisse</a></p>
 				</div>
 			</div>
 			<?php } ?>
