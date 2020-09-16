@@ -27,18 +27,18 @@
 			}
 			if (st < 150) {
 				if ( navbar.hasClass('scrolled') ) {
-					navbar.removeClass('scrolled sleep');
+					navbar.removeClass('scrolled');
 				}
 			}
 			if ( st > 350 ) {
 				if ( !navbar.hasClass('awake') ) {
 					navbar.addClass('awake');
+					
 				}
 			}
 			if ( st < 350 ) {
 				if ( navbar.hasClass('awake') ) {
 					navbar.removeClass('awake');
-					navbar.addClass('sleep');
 				}
 			}
 		});
